@@ -12,14 +12,25 @@
     
     
       <item>
-        <title>Mac OS) M1 으로 oracle &amp; eclipse 연동하기 (1)</title>
+        <title>M1 으로 oracle &amp; eclipse 연동하기 (2)</title>
+        <description>
+          M1 생존기 - 
+          전자지갑으로 sql developer에 사용자를 생성해보자! 지난글에 오라클 클라우드에서 전자지갑을 내려받았다. 그렇다면 이제 수업에 사용하는 sql developer에 써먹을 시간이다. 혹시 아직 sql developer가 없다면.. sqldev-downloads 여기에가서 다운을 먼저받자! 나는 homebrew로 다운받았지만 뭐로 해도 상관은 없다. 먼저 sql developer를 실행하면 좌측 상단에 녹색+(새접속) 가 있다. 눌러서 새로만들기/데이터베이스 접속 선택 으로 간다. Name...
+        </description>
+        <pubDate>Thu, 09 Dec 2021 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2021-12-09-post-eclipse-oracle-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/2021-12-09-post-eclipse-oracle-2/</guid>
+      </item>
+    
+      <item>
+        <title>M1 으로 oracle &amp; eclipse 연동하기 (1)</title>
         <description>
           M1 생존기 - 
           M1맥북으로 오라클 과 이클립스를 연동하기 그첫번째, 오라클 클라우드 지갑 다운받기 ❶오라클클라우드 전자지갑으로 DB 생성» 왜 이글을 적고있는가… 내가 기존에 사용하던것은 인텔맥북19년형 이었다.. 그러나 어느날 점심을 먹고오니 로직보드가 벽돌이되는 바람에 갈아타게 되어 현재 M1 에어로 코딩을 하고있다. 비전공자인 내가 택한 국비지원학원에서는 이클립스와 오라클을 사용중인데 웬걸…. 다른동기들이 따라가는 동안 나는 로컬호스트로 접근할수없어...
         </description>
         <pubDate>Thu, 09 Dec 2021 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/2021-12-09-test-markdown/</link>
-        <guid isPermaLink="true">http://localhost:4000/2021-12-09-test-markdown/</guid>
+        <link>http://localhost:4000/2021-12-09-post-eclipse-oracle-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/2021-12-09-post-eclipse-oracle-1/</guid>
       </item>
     
       <item>

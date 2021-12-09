@@ -9,13 +9,13 @@
 
   
 
-  <title>Zino's blog</title>
+  <title>M1 으로 oracle &amp; eclipse 연동하기 (2)</title>
 
   
   <meta name="author" content="Jinho Lee">
   
 
-  <meta name="description" content="My Code Study...">
+  <meta name="description" content="M1 생존기">
 
   
 
@@ -76,17 +76,19 @@
 
   
   <meta property="og:site_name" content="Zino Blog🚀">
-  <meta property="og:title" content="Zino's blog">
-  <meta property="og:description" content="My Code Study...">
+  <meta property="og:title" content="M1 으로 oracle &amp; eclipse 연동하기 (2)">
+  <meta property="og:description" content="M1 생존기">
 
   
   <meta property="og:image" content="http://localhost:4000/assets/img/meme.png">
   
 
   
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://localhost:4000/">
-  <link rel="canonical" href="http://localhost:4000/">
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Jinho Lee">
+  <meta property="og:article:published_time" content="2021-12-09T00:00:00+00:00">
+  <meta property="og:url" content="http://localhost:4000/2021-12-09-post-eclipse-oracle-2/">
+  <link rel="canonical" href="http://localhost:4000/2021-12-09-post-eclipse-oracle-2/">
   
 
   
@@ -95,8 +97,8 @@
   <meta name="twitter:site" content="@">
   <meta name="twitter:creator" content="@">
 
-  <meta property="twitter:title" content="Zino's blog">
-  <meta property="twitter:description" content="My Code Study...">
+  <meta property="twitter:title" content="M1 으로 oracle &amp; eclipse 연동하기 (2)">
+  <meta property="twitter:description" content="M1 생존기">
 
   
   <meta name="twitter:image" content="http://localhost:4000/assets/img/meme.png">
@@ -232,15 +234,18 @@
   <div class="container-md">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-        <div class="page-heading">
-          <h1>Zino's blog</h1>
+        <div class="post-heading">
+          <h1>M1 으로 oracle & eclipse 연동하기 (2)</h1>
           
             
-              <hr class="small">
-              <span class="page-subheading">My Code Study...</span>
+              <h2 class="post-subheading">M1 생존기</h2>
             
           
 
+          
+            <span class="post-meta">Posted on December 9, 2021</span>
+            
+            
           
         </div>
       </div>
@@ -253,186 +258,146 @@
 
 
 
-<div class=" container-md " role="main">
+<div class=" container-md ">
   <div class="row">
     <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+        
+        
+        
+
+        <div id="header-gh-btns">
+          
+            
+              
+            
+          
+        </div>
       
 
       
 
+      <article role="main" class="blog-post">
+        <p><strong>전자지갑으로 sql developer에 사용자를 생성해보자!</strong></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/7e1a47b5-96b7-44e5-add4-a3ac95b5de94/Oracle-SQL-Developer-logo.png" alt="Crepe" /></p>
+
+<p>지난글에 오라클 클라우드에서 전자지갑을 내려받았다.<br />
+그렇다면 이제 수업에 사용하는 sql developer에 써먹을 시간이다.</p>
+
+<p>혹시 아직 sql developer가 없다면..<br />
+<a href="https://www.oracle.com/tools/downloads/sqldev-downloads.html">sqldev-downloads</a> 여기에가서 다운을 먼저받자!<br />
+나는 homebrew로 다운받았지만 뭐로 해도 상관은 없다.</p>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<p>먼저 sql developer를 실행하면 좌측 상단에 녹색+(새접속) 가 있다.</p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/e492a62d-313d-432f-ad86-c4b5ebf8834b/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%206.00.47.png" alt="Crepe" /></p>
+
+<p>눌러서 <strong>새로만들기/데이터베이스</strong> 접속 선택 으로 간다.</p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/0da3a90a-5812-4b83-9fb2-b3cd0f4c7bc8/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.06.39.png" alt="Crepe" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Name :
+좌측 슬라이드에 보여지는 이름으로 ~~접속 이런식으로 생성하였다
+</code></pre></div></div>
+
+<p></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>사용자 이름 / 비밀번호 :
+DB에 접근할때 사용할 유저의 이름과 비번을 설정한다
+</code></pre></div></div>
+
+<p></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>접속유형 :
+클라우드 전자 지갑을 선택, 구성파일은 전자지갑zip파일을 경로로 잡고, tns 접속자를 선택한다. 나는 high를 선택하였다.
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="설정을-마치면-테스트를-눌러-성공-이-나오면-된다">설정을 마치면 테스트를 눌러 “성공” 이 나오면 된다!!</h3>
+<p><br /></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/c1d28fe3-b460-4b78-a4dc-366154cc7a11/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.18.35.png" alt="Crepe" /></p>
+<p></p>
+<p>성공적으로 생성이 됬다면 좌측 슬라이드에 방금 Name에서 지어준 이름이 보인다.<br />
+선택하면 접속 정보를 입력하면 되는데<br /> 
+이것 역시 방금 설정한 사용자이름 / 비번 을 입력하면 접속할 수 있다.</p>
+<p></p>
+<p>그럼
+<br />
+<br />
+<br />
+<br />
+짜잔⭐️</p>
+<p></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/357d5f59-4cd9-45f4-86ab-84e7ca26f915/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.19.14.png" alt="Crepe" /></p>
+<p></p>
+
+<h3 id="성공적으로-접속한-것을-볼수있다">성공적으로 접속한 것을 볼수있다!!</h3>
+
+<p><br /></p>
+
+<p>이제 테이블도 생성하고 수업을 따라갈 수있게되었다!<br />
+하지만 문제가 하나 더남았으니<br />
+바로 오라클 db와 이클립스를 연동에 성공하는 것이다<br />
+다음글에서는 마지막!! 이클립스에서 오라클db와 연동하는 방법을 적어보겠다..<br />
+…..🛠🛠🛠
+<br />
+<br />
+<br />
+<br /></p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#M1">M1</a>
+          
+            <a href="/tags#Macbook">Macbook</a>
+          
+            <a href="/tags#ios">ios</a>
+          
+        </div>
+      
+
+      
+
+      
+        <!-- Check if any share-links are active -->
 
 
-<div class="posts-list">
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2021-12-09-post-eclipse-oracle-1/" data-toggle="tooltip" data-placement="top" title="M1 으로 oracle &amp; eclipse 연동하기 (1)">&larr; Previous Post</a>
+        </li>
+        
+        
+      </ul>
+      
   
-  <article class="post-preview">
-    
-
-    
-
-    <a href="http://localhost:4000/2021-12-09-post-eclipse-oracle-2/">
-      <h2 class="post-title">M1 으로 oracle & eclipse 연동하기 (2)</h2>
-
-      
-        <h3 class="post-subtitle">
-        M1 생존기
-        </h3>
-      
-    </a>
-
-    <p class="post-meta">
-      
-      Posted on December 9, 2021
-    </p>
-
-    
-
-    
-    
-
-    <div class="post-entry">
-      
-      전자지갑으로 sql developer에 사용자를 생성해보자!
-
-
-      
-      
-        <a href="http://localhost:4000/2021-12-09-post-eclipse-oracle-2/" class="post-read-more">[Read&nbsp;More]</a>
-      
-    </div>
-    
-
-    
-    <div class="blog-tags">
-      <span>Tags:</span>
-      
-      <a href="http://localhost:4000/tags#M1">M1</a>
-      
-      <a href="http://localhost:4000/tags#Macbook">Macbook</a>
-      
-      <a href="http://localhost:4000/tags#ios">ios</a>
-      
-    </div>
-    
-
-   </article>
   
-  <article class="post-preview">
-    
-
-    
-
-    <a href="http://localhost:4000/2021-12-09-post-eclipse-oracle-1/">
-      <h2 class="post-title">M1 으로 oracle & eclipse 연동하기 (1)</h2>
-
-      
-        <h3 class="post-subtitle">
-        M1 생존기
-        </h3>
-      
-    </a>
-
-    <p class="post-meta">
-      
-      Posted on December 9, 2021
-    </p>
-
-    
-
-    
-    
-
-    <div class="post-entry">
-      
-      M1맥북으로 오라클 과 이클립스를 연동하기 그첫번째, 오라클 클라우드 지갑 다운받기
-
-
-      
-      
-        <a href="http://localhost:4000/2021-12-09-post-eclipse-oracle-1/" class="post-read-more">[Read&nbsp;More]</a>
-      
-    </div>
-    
-
-    
-    <div class="blog-tags">
-      <span>Tags:</span>
-      
-      <a href="http://localhost:4000/tags#M1">M1</a>
-      
-      <a href="http://localhost:4000/tags#Macbook">Macbook</a>
-      
-      <a href="http://localhost:4000/tags#ios">ios</a>
-      
-    </div>
-    
-
-   </article>
   
-  <article class="post-preview">
-    
 
-    
-
-    <a href="http://localhost:4000/2021-12-09-flake-it-till-you-make-it/">
-      <h2 class="post-title">Zino's Blog🚀</h2>
-
-      
-        <h3 class="post-subtitle">
-        소개글...⭐️
-        </h3>
-      
-    </a>
-
-    <p class="post-meta">
-      
-      Posted on December 9, 2021
-    </p>
-
-    
-    <div class="post-image post-image-small">
-      <a href="http://localhost:4000/2021-12-09-flake-it-till-you-make-it/" aria-label="Thumbnail">
-        <img src="http://localhost:4000/assets/img/meme.png" alt="Post thumbnail">
-      </a>
-    </div>
-    
-
-    
-    
-    <div class="post-image post-image-short">
-      <a href="http://localhost:4000/2021-12-09-flake-it-till-you-make-it/" aria-label="Thumbnail">
-        <img src="http://localhost:4000/assets/img/meme.png" alt="Post thumbnail">
-      </a>
-    </div>
-    
-
-    <div class="post-entry">
-      
-      Hi im zino!!
-
-      
-      
-    </div>
-    
-
-    
-    <div class="blog-tags">
-      <span>Tags:</span>
-      
-      <a href="http://localhost:4000/tags#coding">coding</a>
-      
-    </div>
-    
-
-   </article>
   
-</div>
 
 
+  
 
 
-      
-
-      
 
     </div>
   </div>
