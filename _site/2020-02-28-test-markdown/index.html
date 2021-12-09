@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  <title>Mac OS) M1 으로 oracle &amp; eclipse 연동하기 (1)</title>
+
+  
+  <meta name="author" content="Jinho Lee">
+  
+
+  <meta name="description" content="M1 생존기">
+
+  
+
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="Zino Blog🚀" href="http://localhost:4000/feed.xml">
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  <meta property="og:site_name" content="Zino Blog🚀">
+  <meta property="og:title" content="Mac OS) M1 으로 oracle &amp; eclipse 연동하기 (1)">
+  <meta property="og:description" content="M1 생존기">
+
+  
+  <meta property="og:image" content="http://localhost:4000/assets/img/meme.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Jinho Lee">
+  <meta property="og:article:published_time" content="2020-02-28T00:00:00+00:00">
+  <meta property="og:url" content="http://localhost:4000/2020-02-28-test-markdown/">
+  <link rel="canonical" href="http://localhost:4000/2020-02-28-test-markdown/">
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:creator" content="@">
+
+  <meta property="twitter:title" content="Mac OS) M1 으로 oracle &amp; eclipse 연동하기 (1)">
+  <meta property="twitter:description" content="M1 생존기">
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/assets/img/meme.png">
+  
+
+  
+
+
+  
+
+  
+
+</head>
+
+
+<body>
+
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular"><a class="navbar-brand" href="http://localhost:4000/">Zino Blog🚀</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/aboutme">About Me</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-search-link" href="#" title="Search">
+            <span id="nav-search-icon" class="fa fa-search"></span>
+            <span id="nav-search-text">Search</span>
+          </a>
+        </li></ul>
+  </div>
+
+  
+
+  
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="http://localhost:4000/">
+          <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/meme.png" />
+        </a>
+      </div>
+    </div>
+  
+
+</nav>
+
+
+
+<div id="beautifuljekyll-search-overlay">
+
+  <div id="nav-search-exit" title="Exit search">✕</div>
+  <input type="text" id="nav-search-input" placeholder="Search">
+  <ul id="search-results-container"></ul>
+  
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    var searchjson = '[ \
+       \
+        { \
+          "title"    : "Mac OS) M1 으로 oracle &amp; eclipse 연동하기 (1)", \
+          "category" : "M1Macbookios", \
+          "url"      : "/2020-02-28-test-markdown/", \
+          "date"     : "February 28, 2020" \
+        }, \
+       \
+        { \
+          "title"    : "Zino&#39;s Blog🚀", \
+          "category" : "coding", \
+          "url"      : "/2020-02-26-flake-it-till-you-make-it/", \
+          "date"     : "February 26, 2020" \
+        }, \
+       \
+       \
+        { \
+          "title"    : "About me", \
+          "category" : "page", \
+          "url"      : "/aboutme/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "My website", \
+          "category" : "page", \
+          "url"      : "/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Tag Index", \
+          "category" : "page", \
+          "url"      : "/tags/", \
+          "date"     : "January 1, 1970" \
+        } \
+       \
+    ]';
+    searchjson = JSON.parse(searchjson);
+
+    var sjs = SimpleJekyllSearch({
+      searchInput: document.getElementById('nav-search-input'),
+      resultsContainer: document.getElementById('search-results-container'),
+      json: searchjson
+    });
+  </script>
+</div>
+
+
+
+
+
+  <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Mac OS) M1 으로 oracle & eclipse 연동하기 (1)</h1>
+          
+            
+              <h2 class="post-subheading">M1 생존기</h2>
+            
+          
+
+          
+            <span class="post-meta">Posted on February 28, 2020</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+        
+        
+        
+
+        <div id="header-gh-btns">
+          
+            
+              
+            
+          
+        </div>
+      
+
+      
+
+      <article role="main" class="blog-post">
+        <p><strong>M1맥북으로 오라클 과 이클립스를 연동하기 그첫번째, 오라클 클라우드 지갑 다운받기</strong></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/43d68fbc-244b-47e8-b7c6-d27c649a7276/Oracle_Cloud_4f8.jpeg" alt="Crepe" /></p>
+
+<h1 id="오라클클라우드-전자지갑으로-db-생성">❶오라클클라우드 전자지갑으로 DB 생성»</h1>
+
+<p><br /></p>
+
+<h2 id="왜-이글을-적고있는가">왜 이글을 적고있는가…</h2>
+
+<p>내가 기존에 사용하던것은 인텔맥북19년형 이었다.. 그러나 어느날 점심을 먹고오니 로직보드가 벽돌이되는 바람에 갈아타게 되어 현재 M1 에어로 코딩을 하고있다.
+비전공자인 내가 택한 국비지원학원에서는 이클립스와 오라클을 사용중인데
+웬걸…. 다른동기들이 따라가는 동안 나는 로컬호스트로 접근할수없어 오라클데이터베이스를 사용못하는 참사가 벌어졌다 ㅎㅎ
+혼자알아보던중 강사님께서 다른 동기들을 도와주시는 것을 보고 도움을 요청했으나… 강사님께서는 슬프게도 맥북으로 한영 전환 하는 방법도 모르시는 분이었다,,
+하지만 수업을 따라가야 했던 나는 포기할수없었고 끝내 방법을 찾아내었다..!</p>
+
+<p><br /></p>
+
+<h2 id="맥북으로-오라클-사용은-불가능한-일일까">맥북으로 오라클 사용은 불가능한 일일까?</h2>
+
+<p>아니다, 사용할수있다 
+하지만 나는 sys계정을 통한 터미널창으로는 접근이 불가능하였다..</p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/0fe26442-7623-41b9-8404-87ce521d805f/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%203.49.25.png" alt="Crepe" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ORA-12547: TNS:lost contact 라는 에러메세지가 떴는데
+커널파라미터나, 오라클 권한의 설정문제 일것 같다..
+현재 수업후 틈틈히 알아보는 중이니 해결한다면 따로 글을 올리겠다.
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="된다면-어떻게">된다면 어떻게??</h2>
+
+<p>나는 Oracle Cloud 전자지갑 을 활용해서 문제를 해결했다.<br />
+<a href="https://cloud.oracle.com">https://cloud.oracle.com</a><br />
+위의 링크를 타고 들어가면 오라클 클라우드 시작화면으로 가게된다</p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/e0cdbe57-9969-4ae4-a17c-204d6c5476d2/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.17.04.png" alt="Crepe" /></p>
+
+<p class="box-note"><strong>ATP 데이터베이스 생성 을 선택하자!</strong>
+<br /></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/157d1d59-55c1-497a-a0fe-da6fe010020b/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.25.51.png" alt="Crepe" /></p>
+
+<p>여기서 데이터베이스이름을 잘 기억하자.
+만약 이름을 oracle로 정했다면 tnsnames 접속명은 oracle이 될것이다.</p>
+
+<p><br /></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/a7f6c9da-1d92-46a6-80d6-0672ecc0ad42/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.31.18.png" alt="Crepe" /></p>
+
+<h3 id="중요한건-데이터베이스-구성이다">중요한건 데이터베이스 구성이다!</h3>
+
+<p class="box-warning"><strong>항상무료를 선택해야 혹시모를 과금폭탄을 피할수 있다..<br />
+학습용으로 오라클을 하려는 것이기 때문에, 무료로 오라클이 제공해주는 저장공간은 국비지원학원 수업내용만 따라간다면 절대절대 부족할 일이 없다!</strong></p>
+
+<p><br /></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/8e6259fe-84f1-4be0-8cd4-d678128d910a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.38.50.png" alt="Crepe" /></p>
+
+<p><strong>관리자는 ADMIN</strong>으로 되어있고 이것은 변경 불가 하다 ..<br />
+그말인 즉슨 최고 통수권자는 동기들처럼 sys같은게 아닌 admin이니,<br />
+sql developer 에서 사용시 잊지말기 바란다..</p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/4aa6cf48-4f21-4953-9c3e-3b9e4790d965/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.45.42.png" alt="Crepe" /></p>
+
+<p>이제 다왔다… 라이센스 유형을 선택후 자율운영 데이터 베이스를 만들면 끝이다!!</p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/b7206a40-7a74-4c34-be23-00b7b35ccab3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.55.43.png" alt="Crepe" /></p>
+
+<p><strong>생성이 잘된것을 확인 할 수 있다!</strong><br />
+여기서 표시이름의 링크를 타고 들어가게되면,
+<br /></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/ff13d6a6-7ed9-4bdd-9aac-92cee8d4665e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.00.24.png" alt="Crepe" />
+<img src="https://media.vlpt.us/images/zinhoxxl/post/82c84789-3581-4dc3-82ca-80b846219d9f/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.02.04.png" alt="Crepe" /></p>
+
+<p><br /></p>
+
+<h3 id="이렇게-전자-지갑을-zip파일로-다운을-받는다">이렇게 전자 지갑을 zip파일로 다운을 받는다!</h3>
+
+<p><br /></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/31ab3e5a-a79b-4805-801e-fea7a2c60fac/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.06.09.png" alt="Crepe" /></p>
+
+<p>지정하고 싶은 경로에 지갑을 압축해제하면 구성파일 중 tnsnames.ora 가있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">데이터베이스이름_high</span> <span class="o">=</span> <span class="p">(</span><span class="nx">description</span><span class="o">=</span> <span class="p">(</span><span class="nx">retry_count</span><span class="o">=</span><span class="mi">20</span><span class="p">)(</span><span class="nx">retry_delay</span><span class="o">=</span><span class="mi">3</span><span class="p">)(</span><span class="nx">address</span><span class="o">=</span><span class="p">(</span><span class="nx">protocol</span><span class="o">=</span><span class="nx">tcps</span><span class="p">)(</span><span class="nx">port</span><span class="o">=</span><span class="mi">1522</span><span class="p">)(</span><span class="nx">host</span><span class="o">=</span><span class="nx">adb</span><span class="p">.</span><span class="nx">ap</span><span class="o">-</span><span class="nx">seoul</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="nx">oraclecloud</span><span class="p">.</span><span class="nx">com</span><span class="p">))(</span><span class="nx">connect_data</span><span class="o">=</span><span class="p">(</span><span class="nx">service_name</span><span class="o">=</span><span class="nx">g6e308e91853fd3_데이터베이스이름_high</span><span class="p">.</span><span class="nx">adb</span><span class="p">.</span><span class="nx">oraclecloud</span><span class="p">.</span><span class="nx">com</span><span class="p">))(</span><span class="nx">security</span><span class="o">=</span><span class="p">(</span><span class="nx">ssl_server_cert_dn</span><span class="o">=</span><span class="dl">"</span><span class="s2">CN=adb.ap-seoul-1.oraclecloud.com, OU=Oracle ADB SEOUL, O=Oracle Corporation, L=Redwood City, ST=California, C=US</span><span class="dl">"</span><span class="p">)))</span>
+
+<span class="nx">데이터베이스이름_low</span> <span class="o">=</span> <span class="p">(</span><span class="nx">description</span><span class="o">=</span> <span class="p">(</span><span class="nx">retry_count</span><span class="o">=</span><span class="mi">20</span><span class="p">)(</span><span class="nx">retry_delay</span><span class="o">=</span><span class="mi">3</span><span class="p">)(</span><span class="nx">address</span><span class="o">=</span><span class="p">(</span><span class="nx">protocol</span><span class="o">=</span><span class="nx">tcps</span><span class="p">)(</span><span class="nx">port</span><span class="o">=</span><span class="mi">1522</span><span class="p">)(</span><span class="nx">host</span><span class="o">=</span><span class="nx">adb</span><span class="p">.</span><span class="nx">ap</span><span class="o">-</span><span class="nx">seoul</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="nx">oraclecloud</span><span class="p">.</span><span class="nx">com</span><span class="p">))(</span><span class="nx">connect_data</span><span class="o">=</span><span class="p">(</span><span class="nx">service_name</span><span class="o">=</span><span class="nx">g6e308e91853fd3_데이터베이스이름_low</span><span class="p">.</span><span class="nx">adb</span><span class="p">.</span><span class="nx">oraclecloud</span><span class="p">.</span><span class="nx">com</span><span class="p">))(</span><span class="nx">security</span><span class="o">=</span><span class="p">(</span><span class="nx">ssl_server_cert_dn</span><span class="o">=</span><span class="dl">"</span><span class="s2">CN=adb.ap-seoul-1.oraclecloud.com, OU=Oracle ADB SEOUL, O=Oracle Corporation, L=Redwood City, ST=California, C=US</span><span class="dl">"</span><span class="p">)))</span>
+
+<span class="nx">데이터베이스이름_medium</span> <span class="o">=</span> <span class="p">(</span><span class="nx">description</span><span class="o">=</span> <span class="p">(</span><span class="nx">retry_count</span><span class="o">=</span><span class="mi">20</span><span class="p">)(</span><span class="nx">retry_delay</span><span class="o">=</span><span class="mi">3</span><span class="p">)(</span><span class="nx">address</span><span class="o">=</span><span class="p">(</span><span class="nx">protocol</span><span class="o">=</span><span class="nx">tcps</span><span class="p">)(</span><span class="nx">port</span><span class="o">=</span><span class="mi">1522</span><span class="p">)(</span><span class="nx">host</span><span class="o">=</span><span class="nx">adb</span><span class="p">.</span><span class="nx">ap</span><span class="o">-</span><span class="nx">seoul</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="nx">oraclecloud</span><span class="p">.</span><span class="nx">com</span><span class="p">))(</span><span class="nx">connect_data</span><span class="o">=</span><span class="p">(</span><span class="nx">service_name</span><span class="o">=</span><span class="nx">g6e308e91853fd3_데이터베이스이름_medium</span><span class="p">.</span><span class="nx">adb</span><span class="p">.</span><span class="nx">oraclecloud</span><span class="p">.</span><span class="nx">com</span><span class="p">))(</span><span class="nx">security</span><span class="o">=</span><span class="p">(</span><span class="nx">ssl_server_cert_dn</span><span class="o">=</span><span class="dl">"</span><span class="s2">CN=adb.ap-seoul-1.oraclecloud.com, OU=Oracle ADB SEOUL, O=Oracle Corporation, L=Redwood City, ST=California, C=US</span><span class="dl">"</span><span class="p">)))</span>
+
+<span class="nx">데이터베이스이름_tp</span> <span class="o">=</span> <span class="p">(</span><span class="nx">description</span><span class="o">=</span> <span class="p">(</span><span class="nx">retry_count</span><span class="o">=</span><span class="mi">20</span><span class="p">)(</span><span class="nx">retry_delay</span><span class="o">=</span><span class="mi">3</span><span class="p">)(</span><span class="nx">address</span><span class="o">=</span><span class="p">(</span><span class="nx">protocol</span><span class="o">=</span><span class="nx">tcps</span><span class="p">)(</span><span class="nx">port</span><span class="o">=</span><span class="mi">1522</span><span class="p">)(</span><span class="nx">host</span><span class="o">=</span><span class="nx">adb</span><span class="p">.</span><span class="nx">ap</span><span class="o">-</span><span class="nx">seoul</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="nx">oraclecloud</span><span class="p">.</span><span class="nx">com</span><span class="p">))(</span><span class="nx">connect_data</span><span class="o">=</span><span class="p">(</span><span class="nx">service_name</span><span class="o">=</span><span class="nx">g6e308e91853fd3_데이터베이스이름_tp</span><span class="p">.</span><span class="nx">adb</span><span class="p">.</span><span class="nx">oraclecloud</span><span class="p">.</span><span class="nx">com</span><span class="p">))(</span><span class="nx">security</span><span class="o">=</span><span class="p">(</span><span class="nx">ssl_server_cert_dn</span><span class="o">=</span><span class="dl">"</span><span class="s2">CN=adb.ap-seoul-1.oraclecloud.com, OU=Oracle ADB SEOUL, O=Oracle Corporation, L=Redwood City, ST=California, C=US</span><span class="dl">"</span><span class="p">)))</span>
+
+<span class="nx">데이터베이스이름_tpurgent</span> <span class="o">=</span> <span class="p">(</span><span class="nx">description</span><span class="o">=</span> <span class="p">(</span><span class="nx">retry_count</span><span class="o">=</span><span class="mi">20</span><span class="p">)(</span><span class="nx">retry_delay</span><span class="o">=</span><span class="mi">3</span><span class="p">)(</span><span class="nx">address</span><span class="o">=</span><span class="p">(</span><span class="nx">protocol</span><span class="o">=</span><span class="nx">tcps</span><span class="p">)(</span><span class="nx">port</span><span class="o">=</span><span class="mi">1522</span><span class="p">)(</span><span class="nx">host</span><span class="o">=</span><span class="nx">adb</span><span class="p">.</span><span class="nx">ap</span><span class="o">-</span><span class="nx">seoul</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="nx">oraclecloud</span><span class="p">.</span><span class="nx">com</span><span class="p">))(</span><span class="nx">connect_data</span><span class="o">=</span><span class="p">(</span><span class="nx">service_name</span><span class="o">=</span><span class="nx">g6e308e91853fd3_데이터베이스이름_tpurgent</span><span class="p">.</span><span class="nx">adb</span><span class="p">.</span><span class="nx">oraclecloud</span><span class="p">.</span><span class="nx">com</span><span class="p">))(</span><span class="nx">security</span><span class="o">=</span><span class="p">(</span><span class="nx">ssl_server_cert_dn</span><span class="o">=</span><span class="dl">"</span><span class="s2">CN=adb.ap-seoul-1.oraclecloud.com, OU=Oracle ADB SEOUL, O=Oracle Corporation, L=Redwood City, ST=California, C=US</span><span class="dl">"</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<p>이런 내용인데 tns 접속자를 확인할수 있다.<br />
+tns alias 정보, 접속 프로토콜, 접속 주소 등이 나와있는데,<br />
+잘보면 high, low, medium, tp, tpurgent 등으로 나누어져있다.<br />
+그중 주된것의 특징은 이러하다.</p>
+
+<p class="box-note"><strong>high :</strong> 가장 성능이 좋고, 가장 응답속도가 빠르지만 동시실행가능한 sql문은 3개로 제한 적이다.</p>
+
+<p class="box-warning"><strong>medium :</strong> 동시실행 가능한 sql문이 high 보다는 많지만 동시실행이 가능한것이 많은 만큼 그 성능자체는 비교적 낮은 수준이다.</p>
+
+<p class="box-error"><strong>low :</strong> 동시실행 가능한 sql문이 가~장 많지만 제~일 구리다 처다보지 말자.</p>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<h3 id="이렇게-오라클-클라우드로-전자지갑을-다운받는-방법을-기록했다">이렇게 오라클 클라우드로 전자지갑을 다운받는 방법을 기록했다!</h3>
+
+<p><br /></p>
+
+<h2 id="다음은-sql-developer에서-다운받은-전자지갑을-써먹어보자">다음은 sql developer에서 다운받은 전자지갑을<br /> 써먹어보자.</h2>
+<p>……..🛠🛠</p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#M1">M1</a>
+          
+            <a href="/tags#Macbook">Macbook</a>
+          
+            <a href="/tags#ios">ios</a>
+          
+        </div>
+      
+
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2020-02-26-flake-it-till-you-make-it/" data-toggle="tooltip" data-placement="top" title="Zino's Blog🚀">&larr; Previous Post</a>
+        </li>
+        
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+
+  
+
+
+
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="mailto:zinhoxxl@gmail.com" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/https://github.com/zinhoxxl" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li></ul>
+
+      
+      <p class="copyright text-muted">
+      
+        Jinho Lee
+        &nbsp;&bull;&nbsp;
+      
+      2021
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="http://localhost:4000/">zinhoxxl.github.io</a>
+        </span>
+      
+
+      
+      </p>
+      <p class="theme-by text-muted">
+        Powered by
+        <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>
