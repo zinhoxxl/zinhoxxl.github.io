@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  <title>M1 으로 oracle &amp; eclipse 연동하기 (3)</title>
+
+  
+  <meta name="author" content="Jinho Lee">
+  
+
+  <meta name="description" content="M1 생존기">
+
+  
+
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="Zino Blog🚀" href="http://localhost:4000/feed.xml">
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  <meta property="og:site_name" content="Zino Blog🚀">
+  <meta property="og:title" content="M1 으로 oracle &amp; eclipse 연동하기 (3)">
+  <meta property="og:description" content="M1 생존기">
+
+  
+  <meta property="og:image" content="http://localhost:4000/assets/img/meme.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Jinho Lee">
+  <meta property="og:article:published_time" content="2021-12-09T00:00:00+00:00">
+  <meta property="og:url" content="http://localhost:4000/2021-12-09-post-eclipse-oracle-3/">
+  <link rel="canonical" href="http://localhost:4000/2021-12-09-post-eclipse-oracle-3/">
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:creator" content="@">
+
+  <meta property="twitter:title" content="M1 으로 oracle &amp; eclipse 연동하기 (3)">
+  <meta property="twitter:description" content="M1 생존기">
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/assets/img/meme.png">
+  
+
+  
+
+
+  
+
+  
+
+</head>
+
+
+<body>
+
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular"><a class="navbar-brand" href="http://localhost:4000/">Zino Blog🚀</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/aboutme">About Me</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-search-link" href="#" title="Search">
+            <span id="nav-search-icon" class="fa fa-search"></span>
+            <span id="nav-search-text">Search</span>
+          </a>
+        </li></ul>
+  </div>
+
+  
+
+  
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="http://localhost:4000/">
+          <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/meme.png" />
+        </a>
+      </div>
+    </div>
+  
+
+</nav>
+
+
+
+<div id="beautifuljekyll-search-overlay">
+
+  <div id="nav-search-exit" title="Exit search">✕</div>
+  <input type="text" id="nav-search-input" placeholder="Search">
+  <ul id="search-results-container"></ul>
+  
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    var searchjson = '[ \
+       \
+        { \
+          "title"    : "M1 으로 oracle &amp; eclipse 연동하기 (3)", \
+          "category" : "M1Macbookios", \
+          "url"      : "/2021-12-09-post-eclipse-oracle-3/", \
+          "date"     : "December  9, 2021" \
+        }, \
+       \
+        { \
+          "title"    : "M1 으로 oracle &amp; eclipse 연동하기 (2)", \
+          "category" : "M1Macbookios", \
+          "url"      : "/2021-12-09-post-eclipse-oracle-2/", \
+          "date"     : "December  9, 2021" \
+        }, \
+       \
+        { \
+          "title"    : "M1 으로 oracle &amp; eclipse 연동하기 (1)", \
+          "category" : "M1Macbookios", \
+          "url"      : "/2021-12-09-post-eclipse-oracle-1/", \
+          "date"     : "December  9, 2021" \
+        }, \
+       \
+        { \
+          "title"    : "Zino&#39;s Blog🚀", \
+          "category" : "coding", \
+          "url"      : "/2021-12-09-flake-it-till-you-make-it/", \
+          "date"     : "December  9, 2021" \
+        }, \
+       \
+       \
+        { \
+          "title"    : "Welcome to Zino&#39;s Blog!⭐️", \
+          "category" : "page", \
+          "url"      : "/aboutme/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Zino&#39;s blog", \
+          "category" : "page", \
+          "url"      : "/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Tag Index", \
+          "category" : "page", \
+          "url"      : "/tags/", \
+          "date"     : "January 1, 1970" \
+        } \
+       \
+    ]';
+    searchjson = JSON.parse(searchjson);
+
+    var sjs = SimpleJekyllSearch({
+      searchInput: document.getElementById('nav-search-input'),
+      resultsContainer: document.getElementById('search-results-container'),
+      json: searchjson
+    });
+  </script>
+</div>
+
+
+
+
+
+  <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>M1 으로 oracle & eclipse 연동하기 (3)</h1>
+          
+            
+              <h2 class="post-subheading">M1 생존기</h2>
+            
+          
+
+          
+            <span class="post-meta">Posted on December 9, 2021</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+        
+        
+        
+
+        <div id="header-gh-btns">
+          
+            
+              
+            
+          
+        </div>
+      
+
+      
+
+      <article role="main" class="blog-post">
+        <p><strong>이클립스에서 오라클DB 연동하기 그마지막!</strong></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/2e811348-f1d0-4538-9ad8-a63bf40f263e/eclipse-%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3-%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%B8%E1%84%89%E1%85%B3-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5.png" alt="Crepe" /></p>
+
+<p></p>
+
+<h1 id="-eclipse-와-oracledb-연동">❸ eclipse 와 oracleDB 연동!»</h1>
+
+<p><br /></p>
+
+<p>전자지갑으로 sql developer 에서 사용자를 생성하였다.<br />
+이젠 학원에서 사용하는 eclipse 에서 oracleDB를 연동 해보겠다.</p>
+
+<p>이클립스와 오라클을 연동한다 는 것은<br /></p>
+<p></p>
+<h3 id="자바java를-이용-오라클에-생성한-테이블등에-접근하여-정보를-가져온다는-것을-의미한다">자바(JAVA)를 이용, 오라클에 생성한 테이블등에 접근하여 정보를 가져온다는 것을 의미한다.</h3>
+<p>연동을 위해서는 반드시 자바와 오라클DB의 연동을 위하여 ojdbc 라이브러리를 가져오는것이 필요한데<br /> 
+이 ojdbc 버전을 어떤것을 사용할지가 굉장히 큰문제였고,<br />
+그로인해 매우 삽질과 고생을 하였다……💀<br />
+(사전에 나는 수업으로는 jdk 버전을 8 을 사용한다는 점을 고지한다.)<br />
+<br />
+<br />
+ojdbc 라이브러리는 오라클 홈페이지에서 제공하고있다<br />
+<a href="https://www.oracle.com/database/technologies/jdbc-ucp-122-downloads.html">ojdbc 다운받기!!!!</a>  여기로 가면 다른버전,,다른 어떤것도 쳐다보지 말고</p>
+<p></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ojdbc 8-full.tar.gz
+</code></pre></div></div>
+
+<p></p>
+
+<p>이걸 다운받도록 한다!!!!!!!!</p>
+
+<p></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/34a5e683-170a-4986-8b28-bff9eb829581/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.03.09.png" alt="Crepe" /></p>
+
+<p></p>
+
+<p>다운받았다면 작업중인 workspace 폴더에 압축을 풀어준다<br />
+그리고<br />
+이클립스에 프로젝트를 생성하고 우클릭을하여 Build Path -&gt; configure Build Path <br />
+로 들어간다</p>
+
+<p><br /></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/06d49f25-6c3d-410b-9e57-ced14dfbd296/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.07.50.png" alt="Crepe" /></p>
+
+<p></p>
+
+<p>Add External JARs… 를 클릭한다</p>
+
+<p></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/003d7d0a-8a0f-4cc2-b2da-3ea4a8a62de2/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.10.47.png" alt="Crepe" /></p>
+
+<p></p>
+
+<p>ojdbc를 압축해제한 곳을 경로로 잡아서 ojdbc8.jar를 선택한다</p>
+
+<p></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/3fbcd5fb-39b7-425c-ba24-d19f1d5b5c57/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.13.14.png" alt="Crepe" /></p>
+
+<p></p>
+
+<p><em>정상적으로 ojdbc가 선택이되었다면 Apply and Close 를 눌러서 Build Path를 마친다!!!⚡️</em></p>
+
+<p><br /></p>
+
+<p>그렇다면 이제 설정한 ojdbc 가 정상적으로 작동이 되는지 확인해보겠다<br />
+자바Class를 하나만들어서 다음 코드를 입력한다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import java.sql.Connection;
+import java.sql.DriverManager;
+
+/* 오라클 접속 테스트 */
+public class ConnectTest_01 {
+	public static void main(String[] args) {
+       String url ="jdbc:oracle:thin:@데이터베이스이름_high?TNS_ADMIN=/전자지갑파일 경로/Wallet_데이터베이스이름";
+       String userid="사용자 이름";
+       String pwd ="비밀번호";
+       
+     
+       //드라이버 로딩 
+       try {
+    	    //oracle DB연결 드라이버 로딩
+    	    Class.forName("oracle.jdbc.OracleDriver");//
+    	    System.out.println("드라이버 로딩 성공");
+       }catch(Exception e) {
+    	    e.printStackTrace();
+       }
+       
+       //DBMS와 연결
+       try {
+    	       System.out.println("데이터베이스 연결 준비......");
+    	       Connection con =DriverManager.getConnection(url, userid, pwd);
+    	       if(con!=null) {
+    	    	   System.out.println("데이터베이스 연결 성공...");
+    	       }
+       }catch(Exception e) {
+    	   e.printStackTrace();
+       }
+	}
+}
+</code></pre></div></div>
+
+<p></p>
+<p><strong>여기서 중요한 것 몇개를 짚겠다! .. 내가 localhost로 오라클접근이 가능했다면</strong></p>
+
+<p></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String url ="jdbc:oracle:thin:@localhost:1521:xe";
+</code></pre></div></div>
+
+<p>이런식으로 했겠지만 우리는 전자 지갑을 사용했기에 좀 특별하다.<br />
+만약내가 데이터베이스이름이 oracle이고 다운받은 전자지갑이 Wallet_oracle 이라면</p>
+
+<p></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String url ="jdbc:oracle:thin:@oracle_high?TNS_ADMIN=/전자지갑파일 경로/Wallet_oracle";
+</code></pre></div></div>
+
+<p></p>
+
+<p>이런식으로 하면 된다. 전자지갑 파일 경로는 전자지갑 압축해제 한 바로 그경로이다.</p>
+
+<p><br /></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/f56a5cd8-aec2-4c55-a974-78d595351181/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.26.13.png" alt="Crepe" /></p>
+
+<p></p>
+
+<p>이상태에서 option + command + c 를 눌러 파일경로를 복사하고
+위의 전자지갑파일경로 에 붙여넣기한다.</p>
+
+<p>그리고 코드를 실행하면</p>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<h3 id="boooya">BoooYa⚡</h3>
+
+<p></p>
+
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/d033cc59-f8f3-445f-8b98-270a4daadcf8/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.29.32.png" alt="Crepe" /></p>
+
+<p>콘솔 창에 데이터베이스 연결 성공이 잘 나온것을 확인할 수있다..</p>
+
+<p>성공!!!!!!!!<br />
+👏🏼👏🏼👏🏼👏🏼👏🏼👏🏼👏🏼👏🏼<br /></p>
+
+<p><br /></p>
+
+<p>이클립스에서 오라클DB를 연동하는 방법만 말하기때문에 이번글은 여기서 끝내겠다.<br /></p>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<h2 id="마무리하며-">마무리하며 ….</h2>
+<p><br />
+적어놓고보니 정말 아무것도 아니지만..<br />
+백지상태에 M1에 관한 정보도 전무하고, 강사님의 도움도 받을 수 없던 나에게는<br />
+수업을 잘못따라가는 것이 무척 부담이었다.<br />
+구글에는 m1에서 오라클 을 시도한다니 비방하는 글로만 가득했지만💀<br />
+누군가 어찌어찌 해낸글을 보았다.<br />
+그건 분명 나에게 확신을 가져다줬다.<br />
+m1은 문제가 아니다 , 안되는 건 내가 설정을 잘못했기 때문이다.<br />
+라는 확신<br />
+<br />
+그렇기에 포기는 생각도 하지 않았다.<br />
+이 고비를 넘기면 대단한 성취감이 날기다리고 있을것 같았고<br />
+내가 해낼 수 있을 거라 믿었다<br />
+매우 많은 시행착오가 있었다…. 무지속의 무지로 인해서 나는 모든 가능성을 열어두고<br />
+경우의 수를 줄여가는 방법을 택했다<br />
+주말을 반납하고 4일 을 몰두한 무지막지한 노가다였다<br />
+직감적으로 너무 멀리 갔다는 느낌이 들어 다시 오라클 홈페이지의 영자로 적은 해결 방법을 보기로 했다<br />
+근데 ojdbc 버전이..<br />
+성공했다는 사람의 것과 그 안내글에 나온 버전이 달랐고<br />
+혹시나 하는 마음에 8버전으로 갈아끼워 보니<br />
+해결이되었다..<br />
+그 과정에서 다른것도 알아보며 공부하던것 그리고 인내의 시간, 나에대한 믿음<br />
+그리고 마지막 해결됬을때의 카타르시스는 지금도 짜릿하다<br />
+별것아니지만 이로 인해 나는 많은 공부가 되었던거 같다<br />
+이후에도 난 홀로 계속해서 새로운 수업이진행될때마다 새로운 난관에 봉착했지만<br />
+이 때의 경험으로 해결해나가는 것 같다.<br />
+<br /></p>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<p><br />
+<br /></p>
+
+<h3 id="앞으로도-화이팅">앞으로도 화이팅!!!!</h3>
+
+<p><br />
+<br /></p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#M1">M1</a>
+          
+            <a href="/tags#Macbook">Macbook</a>
+          
+            <a href="/tags#ios">ios</a>
+          
+        </div>
+      
+
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2021-12-09-post-eclipse-oracle-2/" data-toggle="tooltip" data-placement="top" title="M1 으로 oracle &amp; eclipse 연동하기 (2)">&larr; Previous Post</a>
+        </li>
+        
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+
+  
+
+
+
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="mailto:zinhoxxl@gmail.com" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/zinhoxxl" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li></ul>
+
+      
+      <p class="copyright text-muted">
+      
+        Jinho Lee
+        &nbsp;&bull;&nbsp;
+      
+      2021
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="http://localhost:4000/">zinhoxxl.github.io</a>
+        </span>
+      
+
+      
+      </p>
+      <p class="theme-by text-muted">
+        Powered by
+        <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>

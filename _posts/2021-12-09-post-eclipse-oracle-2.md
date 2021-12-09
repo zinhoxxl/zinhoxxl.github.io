@@ -11,6 +11,11 @@ comments: true
 **전자지갑으로 sql developer에 사용자를 생성해보자!**
 
 ![Crepe](https://media.vlpt.us/images/zinhoxxl/post/7e1a47b5-96b7-44e5-add4-a3ac95b5de94/Oracle-SQL-Developer-logo.png)
+<p></p>
+
+# ❶오라클클라우드 전자지갑으로 DB 생성>> #
+
+<p></p>
 
 지난글에 오라클 클라우드에서 전자지갑을 내려받았다.<br>
 그렇다면 이제 수업에 사용하는 sql developer에 써먹을 시간이다.
