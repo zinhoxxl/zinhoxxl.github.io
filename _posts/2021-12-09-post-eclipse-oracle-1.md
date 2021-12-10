@@ -4,7 +4,7 @@ title: M1 으로 oracle & eclipse 연동하기 (1)
 subtitle: M1 생존기
 gh-repo: daattali/beautiful-jekyll
 gh-badge: [zinhoxxl]
-thumbnail-img: /assets/img/oracleCould.jpg
+thumbnail-img: /assets/img/oracleCloud.jpg
 tags: [M1, Macbook, ios]
 comments: true
 ---
