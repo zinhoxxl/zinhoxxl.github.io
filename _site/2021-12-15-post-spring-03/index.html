@@ -9,13 +9,13 @@
 
   
 
-  <title>M1 으로 oracle &amp; eclipse 연동하기 (2)</title>
+  <title>Spring (02)</title>
 
   
   <meta name="author" content="Jinho Lee">
   
 
-  <meta name="description" content="M1 생존기">
+  <meta name="description" content="라이브러리 살펴보기">
 
   
 
@@ -76,19 +76,19 @@
 
   
   <meta property="og:site_name" content="Zino Blog🚀">
-  <meta property="og:title" content="M1 으로 oracle &amp; eclipse 연동하기 (2)">
-  <meta property="og:description" content="M1 생존기">
+  <meta property="og:title" content="Spring (02)">
+  <meta property="og:description" content="라이브러리 살펴보기">
 
   
-  <meta property="og:image" content="http://localhost:4000/assets/img/sqlDeveloper.jpg">
+  <meta property="og:image" content="http://localhost:4000/assets/img/spring.png">
   
 
   
   <meta property="og:type" content="article">
   <meta property="og:article:author" content="Jinho Lee">
-  <meta property="og:article:published_time" content="2021-12-09T00:00:00+00:00">
-  <meta property="og:url" content="http://localhost:4000/2021-12-09-post-eclipse-oracle-2/">
-  <link rel="canonical" href="http://localhost:4000/2021-12-09-post-eclipse-oracle-2/">
+  <meta property="og:article:published_time" content="2021-12-15T00:00:00+00:00">
+  <meta property="og:url" content="http://localhost:4000/2021-12-15-post-spring-03/">
+  <link rel="canonical" href="http://localhost:4000/2021-12-15-post-spring-03/">
   
 
   
@@ -97,11 +97,11 @@
   <meta name="twitter:site" content="@">
   <meta name="twitter:creator" content="@">
 
-  <meta property="twitter:title" content="M1 으로 oracle &amp; eclipse 연동하기 (2)">
-  <meta property="twitter:description" content="M1 생존기">
+  <meta property="twitter:title" content="Spring (02)">
+  <meta property="twitter:description" content="라이브러리 살펴보기">
 
   
-  <meta name="twitter:image" content="http://localhost:4000/assets/img/sqlDeveloper.jpg">
+  <meta name="twitter:image" content="http://localhost:4000/assets/img/spring.png">
   
 
   
@@ -270,15 +270,15 @@
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
         <div class="post-heading">
-          <h1>M1 으로 oracle & eclipse 연동하기 (2)</h1>
+          <h1>Spring (02)</h1>
           
             
-              <h2 class="post-subheading">M1 생존기</h2>
+              <h2 class="post-subheading">라이브러리 살펴보기</h2>
             
           
 
           
-            <span class="post-meta">Posted on December 9, 2021</span>
+            <span class="post-meta">Posted on December 15, 2021</span>
             
             
           
@@ -314,84 +314,93 @@
       
 
       <article role="main" class="blog-post">
-        <p><strong>전자지갑으로 sql developer에 사용자를 생성해보자!</strong></p>
+        <p><strong>❷라이브러리 살펴보기</strong></p>
 
-<p><img src="https://media.vlpt.us/images/zinhoxxl/post/7e1a47b5-96b7-44e5-add4-a3ac95b5de94/Oracle-SQL-Developer-logo.png" alt="Crepe" /></p>
-<p></p>
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/6e10485f-051f-4473-808d-bb673d7825a8/spring.png" alt="Crepe" /></p>
 
-<h1 id="오라클클라우드-전자지갑으로-db-생성">❶오라클클라우드 전자지갑으로 DB 생성»</h1>
+<h1 id="라이브러리-살펴보기">❷라이브러리 살펴보기</h1>
+<p><br /></p>
+<ul>
+  <li>프로젝트 생성</li>
+  <li>
+    <h3 id="라이브러리-살펴보기-1">라이브러리 살펴보기</h3>
+  </li>
+  <li>View 환경설정</li>
+  <li>빌드하고 실행하기</li>
+</ul>
 
-<p></p>
+<p><br /></p>
 
-<p>지난글에 오라클 클라우드에서 전자지갑을 내려받았다.<br />
-그렇다면 이제 수업에 사용하는 sql developer에 써먹을 시간이다.</p>
-
-<p>혹시 아직 sql developer가 없다면..<br />
-<a href="https://www.oracle.com/tools/downloads/sqldev-downloads.html">sqldev-downloads</a> 여기에가서 다운을 먼저받자!<br />
-나는 homebrew로 다운받았지만 뭐로 해도 상관은 없다.</p>
+<p>이전 글에서 언급한 build.gradle 파일은 겉으로 보이기에는 http://start.spring.io 에서 build 할 때 <br />
+Dependencies에서 선택한 Spring Web 과 Thymeleaf 두개를 선택한 것 같아 보이지만 <br />
+그외에 의존관계가 있는 모든 라이브러리를 함께 다운 받은 것과 같다! <br /></p>
 
 <p><br /></p>
 
 <p><br /></p>
 
-<p>먼저 sql developer를 실행하면 좌측 상단에 녹색+(새접속) 가 있다.</p>
+<p>인텔리제이 우측 상단에 보면 Gradle을 클릭하면 그 라이브러리들이 어떻게 구성되어있는지 알 수 있다.</p>
 
-<p><img src="https://media.vlpt.us/images/zinhoxxl/post/e492a62d-313d-432f-ad86-c4b5ebf8834b/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%206.00.47.png" alt="Crepe" /></p>
+<p><img src="https://media.vlpt.us/images/zinhoxxl/post/cfa8b153-22c8-40bd-8740-bd9bc102412c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-13%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.55.54.png" alt="Crepe" /></p>
 
-<p>눌러서 <strong>새로만들기/데이터베이스</strong> 접속 선택 으로 간다.</p>
-
-<p><img src="https://media.vlpt.us/images/zinhoxxl/post/0da3a90a-5812-4b83-9fb2-b3cd0f4c7bc8/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.06.39.png" alt="Crepe" /></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Name :
-좌측 슬라이드에 보여지는 이름으로 ~~접속 이런식으로 생성하였다
-</code></pre></div></div>
-
-<p></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>사용자 이름 / 비밀번호 :
-DB에 접근할때 사용할 유저의 이름과 비번을 설정한다
-</code></pre></div></div>
-
-<p></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>접속유형 :
-클라우드 전자 지갑을 선택, 구성파일은 전자지갑zip파일을 경로로 잡고, tns 접속자를 선택한다. 나는 high를 선택하였다.
-</code></pre></div></div>
-<p><br /></p>
-
-<h3 id="설정을-마치면-테스트를-눌러-성공-이-나오면-된다">설정을 마치면 테스트를 눌러 “성공” 이 나오면 된다!!</h3>
-<p><br /></p>
-
-<p><img src="https://media.vlpt.us/images/zinhoxxl/post/c1d28fe3-b460-4b78-a4dc-366154cc7a11/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.18.35.png" alt="Crepe" /></p>
-<p></p>
-<p>성공적으로 생성이 됬다면 좌측 슬라이드에 방금 Name에서 지어준 이름이 보인다.<br />
-선택하면 접속 정보를 입력하면 되는데<br /> 
-이것 역시 방금 설정한 사용자이름 / 비번 을 입력하면 접속할 수 있다.</p>
-<p></p>
-<p>그럼
-<br />
-<br />
-<br />
-<br />
-짜잔⭐️</p>
-<p></p>
-
-<p><img src="https://media.vlpt.us/images/zinhoxxl/post/357d5f59-4cd9-45f4-86ab-84e7ca26f915/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-08%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.19.14.png" alt="Crepe" /></p>
-<p></p>
-
-<h3 id="성공적으로-접속한-것을-볼수있다">성공적으로 접속한 것을 볼수있다!!</h3>
-
-<p><br /></p>
-
-<p>이제 테이블도 생성하고 수업을 따라갈 수있게되었다!<br />
-하지만 문제가 하나 더남았으니<br />
-바로 오라클 db와 이클립스를 연동에 성공하는 것이다<br />
-다음글에서는 마지막!! 이클립스에서 오라클db와 연동하는 방법을 적어보겠다..<br />
-…..🛠🛠🛠
-<br />
-<br />
-<br />
+<p>사진처럼 라이브러리들은 의존관계로 타고타고들어가며 구성되어있는데
 <br /></p>
+<h4 id="어떤-라이브러리를-선택하면-필요한-모든-라이브러리들을-함께-가져오는-구조이다">어떤 라이브러리를 선택하면 필요한 모든 라이브러리들을 함께 가져오는 구조이다!</h4>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<h1 id="이중-핵심라이브러리-">이중 핵심라이브러리 ?</h1>
+<p><br /></p>
+<h3 id="스프링-부트-라이브러리-permalink">❶스프링 부트 라이브러리 “Permalink”</h3>
+<p><br /></p>
+
+<ul>
+  <li>
+    <h3>spring-boot-starter-web</h3>
+    <ul>
+      <li>spring-boot-starter-tomcat: 톰캣 (웹서버)</li>
+      <li>spring-webmvc: 스프링 웹 MVC</li>
+    </ul>
+  </li>
+  <li>
+    <h3>spring-boot-starter-thymeleaf: 타임리프 템플릿 엔진(View)</h3>
+  </li>
+  <li>
+    <h3>spring-boot-starter(공통): 스프링 부트 + 스프링 코어 + 로깅</h3>
+    <ul>
+      <li>spring-boot</li>
+      <li>spring-core</li>
+      <li>spring-boot-starter-logging
+        <ul>
+          <li>logback, slf4j (현재는 이조합을 많이 사용)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="테스트-라이브러리">❷테스트 라이브러리</h3>
+<p><br /></p>
+<ul>
+  <li>
+    <h3>spring-boot-starter-test</h3>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- junit: 테스트 프레임워크
+- mockito: 목 라이브러리
+- assertj: 테스트 코드를 좀 더 편하게 작성하게 도와주는 라이브러리
+- spring-test: 스프링 통합 테스트 지원
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<p><br /></p>
 
       </article>
 
@@ -399,11 +408,11 @@ DB에 접근할때 사용할 유저의 이름과 비번을 설정한다
         <div class="blog-tags">
           <span>Tags:</span>
           
-            <a href="/tags#M1">M1</a>
+            <a href="/tags#Spring">Spring</a>
           
-            <a href="/tags#Macbook">Macbook</a>
+            <a href="/tags#김영한">김영한</a>
           
-            <a href="/tags#ios">ios</a>
+            <a href="/tags#Java">Java</a>
           
         </div>
       
@@ -422,13 +431,9 @@ DB에 접근할때 사용할 유저의 이름과 비번을 설정한다
       <ul class="pagination blog-pager">
         
         <li class="page-item previous">
-          <a class="page-link" href="/2021-12-09-post-eclipse-oracle-1/" data-toggle="tooltip" data-placement="top" title="M1 으로 oracle &amp; eclipse 연동하기 (1)">&larr; Previous Post</a>
+          <a class="page-link" href="/2021-12-14-post-spring-02/" data-toggle="tooltip" data-placement="top" title="Spring (02)">&larr; Previous Post</a>
         </li>
         
-        
-        <li class="page-item next">
-          <a class="page-link" href="/2021-12-09-post-eclipse-oracle-3/" data-toggle="tooltip" data-placement="top" title="M1 으로 oracle &amp; eclipse 연동하기 (3)">Next Post &rarr;</a>
-        </li>
         
       </ul>
       

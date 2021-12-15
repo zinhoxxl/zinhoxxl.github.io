@@ -14,7 +14,18 @@
       <item>
         <title>Spring (02)</title>
         <description>
-          강의 소개 - 
+          라이브러리 살펴보기 - 
+          ❷라이브러리 살펴보기 ❷라이브러리 살펴보기 프로젝트 생성 라이브러리 살펴보기 View 환경설정 빌드하고 실행하기 이전 글에서 언급한 build.gradle 파일은 겉으로 보이기에는 http://start.spring.io 에서 build 할 때 Dependencies에서 선택한 Spring Web 과 Thymeleaf 두개를 선택한 것 같아 보이지만 그외에 의존관계가 있는 모든 라이브러리를 함께 다운 받은 것과 같다! 인텔리제이 우측 상단에 보면 Gradle을...
+        </description>
+        <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2021-12-15-post-spring-03/</link>
+        <guid isPermaLink="true">http://localhost:4000/2021-12-15-post-spring-03/</guid>
+      </item>
+    
+      <item>
+        <title>Spring (02)</title>
+        <description>
+          프로젝트 생성 - 
           ❶프로젝트 환경설정 ❶프로젝트 환경설정 프로젝트 생성 라이브러리 살펴보기 View 환경설정 빌드하고 실행하기 프로젝트를 생성하기에 앞서 준비물이 있다! Java 11 설치 IDE:IntelliJ 또는 Eclipse 설치 이렇게 강의를 진행하는데 나는 수업에서 자바를 8버전을 사용하고있어 8버전에서 변경을 할 필요가있었다. [현재 나의 버전은 1.8이다] homebrew로 11을 다운받은다음, $ export JAVA_HOME=$(/usr/libexec/java_home -v 11) 명령어를 실행시켜...
         </description>
         <pubDate>Tue, 14 Dec 2021 00:00:00 +0000</pubDate>
@@ -23,10 +34,10 @@
       </item>
     
       <item>
-        <title>Post Spring 01</title>
+        <title>Spring (01)</title>
         <description>
-          
-          layout: post title: Spring (01) subtitle: 강의 소개 gh-repo: daattali/beautiful-jekyll gh-badge: [zinhoxxl] thumbnail-img: /assets/img/spring.png tags: [Spring, 김영한, Java] comments: true — 스프링 입문 강의 소개 강의 소개 학원 동기분의 추천으로 좋은 무료강의를 알게되었다. 우아한 형제들의 개발팀장 김영한님의 spring 강의인데 너무 훌륭한 강의같아 포스팅하면서 공부를 해보려한다! 첫 spring 과의 만남이 설레인다..!...
+          강의 소개 - 
+          스프링 입문 강의 소개 강의 소개 학원 동기분의 추천으로 좋은 무료강의를 알게되었다. 우아한 형제들의 개발팀장 김영한님의 spring 강의인데 너무 훌륭한 강의같아 포스팅하면서 공부를 해보려한다! 첫 spring 과의 만남이 설레인다..! 우리는 왜 spring을 왜 공부해야할까? 우리는 실무에서 제대로 동작하는 웹 어플리케이션을 개발하기 위해서 spring을 학습해야한다! 개발자는 직접 코딩하면서 동작하는 어플리케이션을 만들어볼때...
         </description>
         <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
         <link>http://localhost:4000/2021-12-13-post-spring-01/</link>
